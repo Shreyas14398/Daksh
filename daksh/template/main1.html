@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+{%load static%}
 <title>Jobss | India</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="jobs.png">
+<link rel="shortcut icon" href="{%static "jobs.png"%}">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,7 +18,7 @@ body, html {
 .bgimg-1 {
     background-position: center;
     background-size: cover;
-    background-image:url("im1.jpg");
+    background-image:url("{%static "im1.jpg"%}");
     min-height: 100%;
 }
 .w3-bar .w3-button {
@@ -99,7 +100,7 @@ body, html {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-pale-yellow w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="jobs.png" alt="Mountain View"></a>
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="{%static "jobs.png"%}" alt="Mountain View"></a>
     <h5 class="mai">Jobss</h5><h6 class="maii">- India's best job seeking website </h6>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
@@ -108,23 +109,10 @@ body, html {
      <i class="fa fa-caret-down"></i>
    </button>
    <div class="dropdown-content">
-     <a href="#">All jobs</a>
-     <a href="#">IIT/IIM Jobs</a>
-     <a href="#">Govt. Jobs</a>
-     <a href="#">International Jobs</a>
-     <a href="#">Walk-in Jobs</a>
-   </div>
- </div>
-      <div class="dropdown">
-   <button class="dropbtn">Browse Jobs
-     <i class="fa fa-caret-down"></i>
-   </button>
-   <div class="dropdown-content">
-     <a href="#">Jobs by location</a>
-     <a href="#">Jobs by company</a>
-     <a href="#">Jobs by category</a>
-     <a href="#">Jobs by skills</a>
-     <a href="#">Jobs by designation</a>
+     <a href="/jobs/">All jobs</a>
+     <a href="/tech/">Technical Jobs</a>
+     <a href="/nontech/">Non-Technical Jobs</a>
+     <a href="/interns/">Internships</a>
    </div>
  </div>
  <div class="dropdown">
@@ -132,9 +120,8 @@ body, html {
      <i class="fa fa-caret-down"></i>
    </button>
    <div class="dropdown-content">
-     <a href="#">Browse all companies</a>
+     <a href="#work">Browse all companies</a>
      <a href="#">Interview Questions</a>
-     <a href="#">About Companies</a>
    </div>
  </div>
  <div class="dropdown">
@@ -144,7 +131,6 @@ body, html {
    <div class="dropdown-content">
      <a href="#">Study Abroad</a>
      <a href="#">MBA</a>
-     <a href="#">Animation Multimedia</a>
    </div>
  </div>
       <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
@@ -152,7 +138,7 @@ body, html {
       <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
       <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-uae"></i> PRICING</a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
-      <a href="#login" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Login</a>
+      <a href="/pro/" class="w3-bar-item w3-button"><i class="fa fa-user"></i> {{name}}</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -229,7 +215,7 @@ body, html {
       <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Companies</a></p>
     </div>
     <div class="w3-col m6">
-      <img class="w3-image w3-round-large" src="im2.jpg" alt="Buildings" width="700" height="394">
+      <img class="w3-image w3-round-large" src="{%static "im2.jpg"%}" alt="Buildings" width="700" height="394">
     </div>
   </div>
 </div>
@@ -241,7 +227,7 @@ body, html {
   <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="ceo.png" alt="John" style="width:100%"">
+        <img src="{%static "ceo.png"%}" alt="John" style="width:100%"">
         <div class="w3-container">
           <h3>Brandon Howard</h3>
           <p class="w3-opacity">CEO & Founder</p>
@@ -252,7 +238,7 @@ body, html {
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="art.jpg" alt="Jane" style="width:100%;height:375px">
+        <img src="{%static "art.jpg"%}" alt="Jane" style="width:100%;height:375px">
         <div class="w3-container">
           <h3>Karlie Kloss</h3>
           <p class="w3-opacity">Analyst</p>
@@ -262,7 +248,7 @@ body, html {
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="sh.jpg" alt="Mike" style="width:100%;height:375px">
+        <img src="{%static "sh.jpg"%}" alt="Mike" style="width:100%;height:375px">
         <div class="w3-container">
           <h3>Shreyas N</h3>
           <p class="w3-opacity">Chief Designer</p>
@@ -272,7 +258,7 @@ body, html {
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="sha.jpg" alt="Dan" style="width:100%;height:375px">
+        <img src="{%static "sha.jpg"%}" alt="Dan" style="width:100%;height:375px">
         <div class="w3-container">
           <h3>Sharath Sriram</h3>
           <p class="w3-opacity">Web Designer</p>
@@ -310,31 +296,31 @@ body, html {
 
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6">
-      <img src="com1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Google">
+      <img src="{%static "com1.png"%}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Google">
     </div>
     <div class="w3-col l3 m6">
-      <img src="com2.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Amazon">
+      <img src="{%static "com2.png"%}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Amazon">
     </div>
     <div class="w3-col l3 m6">
-      <img src="com3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Adidas">
+      <img src="{%static "com3.jpg"%}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Adidas">
     </div>
     <div class="w3-col l3 m6">
-      <img src="com4.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
+      <img src="{%static "com4.png"%}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
     </div>
   </div>
 
   <div class="w3-row-padding w3-section">
     <div class="w3-col l3 m6">
-      <img src="com5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Microsoft">
+      <img src="{%static "com5.jpg"%}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Microsoft">
     </div>
     <div class="w3-col l3 m6">
-      <img src="com6.jpg" style="width:100%;height:200px" onclick="onClick(this)" class="w3-hover-opacity" alt="Wipro">
+      <img src="{%static "com6.jpg"%}" style="width:100%;height:200px" onclick="onClick(this)" class="w3-hover-opacity" alt="Wipro">
     </div>
     <div class="w3-col l3 m6">
-      <img src="com7.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ashok Leyland">
+      <img src="{%static "com7.png"%}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ashok Leyland">
     </div>
     <div class="w3-col l3 m6">
-      <img src="com8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bosch">
+      <img src="{%static "com8.jpg"%}" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bosch">
     </div>
   </div>
 </div>

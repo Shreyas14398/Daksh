@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+{%load static%}
+<title>Jobss | India</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{%static "jobs.png"%}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image:url("{%static "im1.jpg"%}");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: grey;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.mai{
+  float: left;
+  font-size: 2em;
+  font-weight: bolder;
+}
+.maii{
+  float: left;
+  font-size: 2em;
+  font-weight: lighter;
+}
+</style>
+<body style="background-color:white">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-pale-yellow w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="{%static "jobs.png"%}" alt="Mountain View"></a>
+    <h5 class="mai">Jobss</h5><h6 class="maii">- India's best job seeking website </h6>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <div class="dropdown">
+   <button class="dropbtn">Jobs
+     <i class="fa fa-caret-down"></i>
+   </button>
+   <div class="dropdown-content">
+     <a href="#">All jobs</a>
+     <a href="#">Technical Jobs</a>
+     <a href="#">Non-Technical Jobs</a>
+     <a href="#">Internships</a>
+   </div>
+ </div>
+ <div class="dropdown">
+   <button class="dropbtn">Companies
+     <i class="fa fa-caret-down"></i>
+   </button>
+   <div class="dropdown-content">
+     <a href="#work">Browse all companies</a>
+     <a href="#">Interview Questions</a>
+   </div>
+ </div>
+ <div class="dropdown">
+   <button class="dropbtn">More
+     <i class="fa fa-caret-down"></i>
+   </button>
+   <div class="dropdown-content">
+     <a href="#">Study Abroad</a>
+     <a href="#">MBA</a>
+   </div>
+ </div>
+      <a href="/home/" class="w3-bar-item w3-button">HOME</a>
+    </div>
+
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+          <i class="fa fa-bars"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
+      <h3>LOGIN</h3>
+      <p class="w3-large">Who are you?.</p>
+      <font color="red">
+      <center><b>  {{message}} </b> </center></font>
+      <div class="w3-row-padding" style="margin-top:64px">
+        <div class="w3-third w3-section">
+          <ul class="w3-ul w3-white w3-hover-shadow">
+            <li class="w3-black w3-xlarge w3-padding-32">Searching for Job</li>
+            <li class="w3-padding-16">
+              <form action='/user/' method="POST" name="user">
+                {%csrf_token%}
+                Username: <input type="text" name="uname"><br><br>
+                Password: <input type="password" name="password"><br><br>
+            <li class="w3-light-grey w3-padding-24">
+              <button class="w3-button w3-black w3-padding-large" type="submit">Login</button></form>
+            </li>
+          </ul>
+        </div>
+        <div class="w3-third">
+          <ul class="w3-ul w3-white w3-hover-shadow">
+            <li class="w3-red w3-xlarge w3-padding-48">Recruiter</li>
+            <li class="w3-padding-16">
+              <form action='/recru/' method="POST" name="recru" >
+                {%csrf_token%}
+                Username: <input type="text" name="uname"><br><br>
+                Password: <input type="password" name="password"><br><br>
+            <li class="w3-light-grey w3-padding-24">
+              <button class="w3-button w3-black w3-padding-large" type="submit">Login</button></form>
+            </li>
+          </ul>
+        </div>
+        <div class="w3-third w3-section">
+          <ul class="w3-ul w3-white w3-hover-shadow">
+            <li class="w3-black w3-xlarge w3-padding-32">New? Sign Up!</li>
+            <li class="w3-padding-16">
+              <form action='/signup/' method="POST" name="signup">
+                {%csrf_token%}
+                Name: <input type="text" name="name"><br><br>
+                E-mail: <input type="text" name="email"><br><br>
+                Username: <input type="text" name="uname"><br><br>
+                Password: <input type="password" name="password"><br><br>
+            <li class="w3-light-grey w3-padding-24">
+              <button class="w3-button w3-black w3-padding-large" type="submit">Sign up</button></form>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Section -->
+    <div class="w3-container w3-pale-green" style="padding:128px 16px" id="contact">
+      <h3 class="w3-center">Want to Recruit through us?</h3>
+      <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+      <div class="w3-row-padding" style="margin-top:64px">
+        <div class="w3-center">
+          <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chennai, India</p>
+          <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +91 987654321</p>
+          <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: contactjobss@gmail.com</p>
+          <br>
+          <form action="/action_page.php" target="_blank">
+            <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+            <p>
+            <a href="/login/">      <button class="w3-button w3-black" type="submit">
+                <i class="fa fa-paper-plane"></i> SEND MESSAGE
+              </button></a>
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <footer class="w3-center w3-black w3-padding-64">
+      <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+      <div class="w3-xlarge w3-section">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </div>
+      <p style="background-color:#181818"><br>2018 &#169 Sharath and Shreyas | All Rights Reserved<br><br></p>
+    </footer>
+    <!-- Add Google Maps -->
+    <script>
+    function myMap()
+    {
+      myCenter=new google.maps.LatLng(41.878114, -87.629798);
+      var mapOptions= {
+        center:myCenter,
+        zoom:12, scrollwheel: false, draggable: false,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+      var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+      var marker = new google.maps.Marker({
+        position: myCenter,
+      });
+      marker.setMap(map);
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+
+
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+        } else {
+            mySidebar.style.display = 'block';
+        }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+    <!--
+    To use this code on your website, get a free API key from Google.
+    Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+    -->
+
+    </body>
+    </html>

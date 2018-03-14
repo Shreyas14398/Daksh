@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+{%load static%}
+<title>Jobss | India</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{%static "jobs.png"%}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image:url("{%static "im1.jpg"%}");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: grey;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.mai{
+  float: left;
+  font-size: 2em;
+  font-weight: bolder;
+}
+.maii{
+  float: left;
+  font-size: 2em;
+  font-weight: lighter;
+}
+.skil{
+  list-style-type: none;
+}
+</style>
+<body style="background-color:white">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-pale-yellow w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="{%static "jobs.png"%}" alt="Mountain View"></a>
+    <h5 class="mai">Jobss</h5><h6 class="maii">- India's best job seeking website </h6>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <div class="dropdown">
+   <button class="dropbtn">Jobs
+     <i class="fa fa-caret-down"></i>
+   </button>
+   <div class="dropdown-content">
+     <a href="/jobs/">All jobs</a>
+     <a href="/tech/">Technical Jobs</a>
+     <a href="/nontech/">Non-Technical Jobs</a>
+     <a href="/interns/">Internships</a>
+   </div>
+ </div>
+ <div class="dropdown">
+   <button class="dropbtn">Companies
+     <i class="fa fa-caret-down"></i>
+   </button>
+   <div class="dropdown-content">
+     <a href="#work">Browse all companies</a>
+     <a href="#">Interview Questions</a>
+   </div>
+ </div>
+ <div class="dropdown">
+   <button class="dropbtn">More
+     <i class="fa fa-caret-down"></i>
+   </button>
+   <div class="dropdown-content">
+     <a href="#">Study Abroad</a>
+     <a href="#">MBA</a>
+   </div>
+ </div>
+      <a href="/home/" class="w3-bar-item w3-button">HOME</a>
+    </div>
+
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+          <i class="fa fa-bars"></i>
+        </a>
+
+      </div>
+
+    </div>
+    <!-- Contact Section -->
+    <div class="w3-container w3-pale-green" style="padding:128px 16px" id="contact">
+      <h3 class="w3-center">PROFILE</h3>
+      <div class="w3-row-padding" style="margin-top:64px">
+        <p class="w3-center w3-large">
+          Name: {{name}}<br><br>
+          E-mail ID: {{email}}<br><br>
+          Username: {{uname}}<br><br>
+          Messages: {{message}}<br><br>
+          Skills:
+        <center> <ul class="skil">
+          <li>{{skill1}}</li>
+          <li>{{skill2}}</li>
+          <li>{{skill3}}</li>
+      </ul></center>
+      <form method="POST" action="/skills/">
+        {%csrf_token%}
+        Add some skills to attract recruiters!<br><br>
+        Skill 1: <input type="text" name="skill1"><br><br>
+        Skill 2: <input type="text" name="skill2"><br><br>
+        Skill 3: <input type="text" name="skill3"><br><br>
+        Enter your password: <input type="password" name="password"><br><br>
+        <button class="w3-button w3-black w3-padding-large" type="submit">Submit</button>
+        </form>
+        </div>
+      </div>
+    </div>
